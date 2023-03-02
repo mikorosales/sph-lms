@@ -1,5 +1,6 @@
 {
   "prettier.singleQuote": true,
+  "trailingComma": "none",
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   }

@@ -3,12 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard-with-typescript"],
+  "extends": ["plugin:react/recommended", "standard-with-typescript", "next"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "tsconfig.json",
+    "project": ["**/tsconfig.json"],
     "tsconfigRootDir": "./"
   },
   "plugins": ["react"],
@@ -20,6 +20,10 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "@typescript-eslint/semi": ["error", "always", { "omitLastInOneLineBlock": false}]
+    "@typescript-eslint/semi": [
+      "error",
+      "always",
+      { "omitLastInOneLineBlock": false }
+    ]
   }
 }
