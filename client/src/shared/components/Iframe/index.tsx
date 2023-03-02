@@ -18,7 +18,7 @@ const Iframe: React.FunctionComponent<IframeProps> = ({
   return (
     <div>
       <iframe
-        className={className}
+        className={`mx-auto m-2 ${className ?? ''}`}
         width={width}
         height={height}
         src={src}
@@ -29,10 +29,10 @@ const Iframe: React.FunctionComponent<IframeProps> = ({
 };
 
 Iframe.defaultProps = {
-  className: 'mx-auto m-2',
+  className: '',
   width: '100%',
   height: '600',
-  title: 'Embbeded Content Material'
+  title: ''
 };
 
 export default Iframe;

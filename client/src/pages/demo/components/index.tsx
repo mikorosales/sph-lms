@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 import Iframe from '@/src/shared/components/Iframe';
 
-const Index: React.FunctionComponent = () => {
+const DemoComponent: React.FunctionComponent = () => {
   return (
     <Fragment>
       <div className="container mx-auto">
@@ -36,4 +36,4 @@ const Index: React.FunctionComponent = () => {
   );
 };
 
-export default Index;
+export default DemoComponent;
