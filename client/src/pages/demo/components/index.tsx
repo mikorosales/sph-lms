@@ -4,6 +4,7 @@ import Iframe from '@/src/shared/components/Iframe';
 import Textfield from '@/src/shared/components/TextField';
 import Card from '@/src/shared/components/Card';
 import Pagination from '@/src/shared/components/Pagination';
+import Breadcrumbs from '@/src/shared/components/Breadcrumbs';
 
 const DemoComponent: React.FunctionComponent = () => {
   // sets up the state of the page to track user interaction
