@@ -4,6 +4,7 @@ import Iframe from '@/src/shared/components/Iframe';
 import Breadcrumbs from '@/src/shared/components/Breadcrumbs';
 import Card from '@/src/shared/components/Card';
 import Pagination from '@/src/shared/components/Pagination';
+import SideBar from '@/src/shared/components/SideBar/SideBar';
 
 const DemoComponent: React.FunctionComponent = () => {
   // sets up the state of the page to track user interaction
@@ -24,6 +25,8 @@ const DemoComponent: React.FunctionComponent = () => {
           <a href="#iframe">Iframe</a>
           <br />
           <a href="#breadcrumbs">Breadcrumbs</a>
+          <br />
+          <a href="#sideBar">Side Bar</a>
         </div>
         <br />
         <hr className="w-3/4 mx-auto" />
@@ -124,6 +127,21 @@ const DemoComponent: React.FunctionComponent = () => {
               <br />
               onChangePage = function || ex. onChangePage = function that tracks
               the event of the page
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <hr className="w-3/4 mx-auto" />
+
+        <div className="p-4 border -b border-black" id="sideBar">
+          <h1>Component: Iframe</h1>
+          <br />
+          <SideBar />
+          <div className="mt-[5px]">
+            <h1>Props: </h1>
+            <div className="bg-gray-300 p-[5px]">
+              <p>no props yet and links will update soon</p>
             </div>
           </div>
         </div>
