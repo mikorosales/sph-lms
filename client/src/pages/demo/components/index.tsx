@@ -30,7 +30,12 @@ const DemoComponent: React.FunctionComponent = () => {
         <hr className="w-3/4 mx-auto" />
 
         <div className="p-4 border">
-          <Iframe src="https://www.youtube.com/embed/HGl75kurxok" />
+          <h1>Component: Iframe</h1>
+          <br />
+          <Iframe
+            src="https://www.youtube.com/embed/HGl75kurxok"
+            className="border"
+          />
 
           <div className="mt-[5px]">
             <h1>Props: Iframe</h1>
