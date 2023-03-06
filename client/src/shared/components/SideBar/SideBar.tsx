@@ -7,7 +7,7 @@ const SideBar: React.FunctionComponent = () => {
       <div>
         <div>
           <h1 className="text-lg pb-2 font-medium">
-            Quick Links |{' '}
+            Quick Links | &#160;
             <Link className="text-blue-700" href="/">
               View Trainees
             </Link>
