@@ -1,7 +1,7 @@
-import SideBar from '@/src/shared/layouts/SideBar/SideBar';
+import Sidebar from '@/src/shared/layouts/Sidebar/Sidebar';
 
 const DemoSideBar: React.FC = () => {
-  return <SideBar></SideBar>;
+  return <Sidebar />;
 };
 
 export default DemoSideBar;

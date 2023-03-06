@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const SideBar: React.FunctionComponent = () => {
+const SidebarNav: React.FunctionComponent = () => {
   return (
     <div className="space-y-9">
       <div>
@@ -44,4 +44,4 @@ const SideBar: React.FunctionComponent = () => {
     </div>
   );
 };
-export default SideBar;
+export default SidebarNav;
