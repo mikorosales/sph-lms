@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface Props {
+export interface TextFieldProps {
   label?: string;
   placeholder?: string;
   width: number;
@@ -9,14 +9,14 @@ export interface Props {
   resizable: boolean;
 }
 
-const Textfield: React.FC<Props> = ({
+const Textfield: React.FC<TextFieldProps> = ({
   label,
   placeholder,
   width,
   height,
   className,
   resizable
-}: Props) => {
+}: TextFieldProps) => {
   return (
     <div className="p-5 h-auto w-auto">
       {label !== null && (
