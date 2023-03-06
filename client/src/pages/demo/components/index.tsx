@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Fragment, useState } from 'react';
 import Iframe from '@/src/shared/components/Iframe';
-import Breadcrumbs from '@/src/shared/components/Breadcrumbs';
+import Textfield from '@/src/shared/components/TextField';
 import Card from '@/src/shared/components/Card';
 import Pagination from '@/src/shared/components/Pagination';
 
@@ -29,12 +29,7 @@ const DemoComponent: React.FunctionComponent = () => {
         <hr className="w-3/4 mx-auto" />
 
         <div className="p-4 border">
-          <h1>Component: Iframe</h1>
-          <br />
-          <Iframe
-            src="https://www.youtube.com/embed/HGl75kurxok"
-            className="border"
-          />
+          <Iframe src="https://www.youtube.com/embed/HGl75kurxok" />
 
           <div className="mt-[5px]">
             <h1>Props: Iframe</h1>
@@ -70,6 +65,33 @@ const DemoComponent: React.FunctionComponent = () => {
           </div>
         </div>
 
+        <div className="p-4 border" id="text-field">
+          <Textfield
+            label="Description"
+            placeholder="Enter a description"
+            width={50}
+            height={10}
+            className="text-xl border border-black rounded-lg rows"
+            resizable={true}
+          ></Textfield>
+
+          <div className="mt-[5px]">
+            <h1>Props: Text-field</h1>
+
+            <div className="bg-gray-300 p-[5px]">
+              <p> label = (string) ex. label="Description"</p>
+              <p> placeholder = (string)ex. placeholder="Enter Description"</p>
+              <p> width = (number) ex. width=10 </p>
+              <p> height = (number)ex. height=10 </p>
+              <p>
+                fontsize = (string)ex. fontsize="text-s" | fontsize="text-2xl"
+              </p>
+              <p>
+                resizable = (boolean) ex. resizable="true" | resizable="false"
+              </p>
+            </div>
+          </div>
+        </div>
         <br />
         <hr className="w-3/4 mx-auto" />
 
