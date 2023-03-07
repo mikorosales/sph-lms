@@ -4,6 +4,11 @@ import Iframe from '@/src/shared/components/Iframe';
 import Breadcrumbs from '@/src/shared/components/Breadcrumbs';
 import Card from '@/src/shared/components/Card';
 import Pagination from '@/src/shared/components/Pagination';
+import Searchbar from '@/src/shared/components/SearchBar/SearchBar';
+
+interface componentsProps {
+  onSearch: string;
+}
 
 const DemoComponent: React.FunctionComponent = () => {
   // sets up the state of the page to track user interaction
@@ -14,32 +19,32 @@ const DemoComponent: React.FunctionComponent = () => {
 
   return (
     <Fragment>
-      <div className="container mx-auto">
+      <div className='container mx-auto'>
         <h1>Components Demo Page</h1>
 
-        <div className="m-4 border">
+        <div className='m-4 border'>
           <h2>
             <b>Jump to</b>
           </h2>
-          <a href="#iframe">Iframe</a>
+          <a href='#iframe'>Iframe</a>
           <br />
-          <a href="#breadcrumbs">Breadcrumbs</a>
+          <a href='#breadcrumbs'>Breadcrumbs</a>
         </div>
         <br />
-        <hr className="w-3/4 mx-auto" />
+        <hr className='w-3/4 mx-auto' />
 
-        <div className="p-4 border">
+        <div className='p-4 border'>
           <h1>Component: Iframe</h1>
           <br />
           <Iframe
-            src="https://www.youtube.com/embed/HGl75kurxok"
-            className="border"
+            src='https://www.youtube.com/embed/HGl75kurxok'
+            className='border'
           />
 
-          <div className="mt-[5px]">
+          <div className='mt-[5px]'>
             <h1>Props: Iframe</h1>
 
-            <div className="bg-gray-300 p-[5px]">
+            <div className='bg-gray-300 p-[5px]'>
               <p>className = (string)["auto"] ex. className="border-2"</p>
               <p> width = (string)["auto"] ex. width="100px" | width="70%"</p>
               <p>height = (string)["auto"] ex. height="100px" | height="70%"</p>
@@ -47,7 +52,7 @@ const DemoComponent: React.FunctionComponent = () => {
                 src = (string)[required] ex.
                 src="https://www.youtube.com/embed/HGl75kurxok"
               </p>
-              <p id="iframe">
+              <p id='iframe'>
                 title = (string)["auto"] ex. title="Relaxing Music"
               </p>
             </div>
@@ -55,15 +60,15 @@ const DemoComponent: React.FunctionComponent = () => {
         </div>
 
         <br />
-        <hr className="w-3/4 mx-auto" />
+        <hr className='w-3/4 mx-auto' />
 
-        <div className="p-4 border -b border-black" id="card">
-          <Card height="h-30" title="Sample Card">
+        <div className='p-4 border -b border-black' id='card'>
+          <Card height='h-30' title='Sample Card'>
             <main>This is a card component</main>
           </Card>
-          <div className="mt-[5px]">
+          <div className='mt-[5px]'>
             <h1>Props: Card</h1>
-            <div className="bg-gray-300 p-[5px]">
+            <div className='bg-gray-300 p-[5px]'>
               height: string || ex. height=&apos;h-20&apos; <br />
               title: string || ex. title=&apos;Sample Title&apos; <br />
             </div>
@@ -71,9 +76,9 @@ const DemoComponent: React.FunctionComponent = () => {
         </div>
 
         <br />
-        <hr className="w-3/4 mx-auto" />
+        <hr className='w-3/4 mx-auto' />
 
-        <div className="p-4 border">
+        <div className='p-4 border'>
           <h1>Component: Breadcrumbs</h1>
 
           <br />
@@ -82,40 +87,40 @@ const DemoComponent: React.FunctionComponent = () => {
             paths={[
               {
                 text: 'Profile',
-                url: '/profile'
+                url: '/profile',
               },
               {
                 text: 'User Information',
-                url: '/profile/information'
+                url: '/profile/information',
               },
               {
                 text: 'Component Index',
-                url: '/demo/components'
-              }
+                url: '/demo/components',
+              },
             ]}
           />
 
           <br />
 
-          <div className="mt-[5px]" id="breadcrumbs">
+          <div className='mt-[5px]' id='breadcrumbs'>
             <h1>Props: Breadcrumbs</h1>
-            <div className="bg-gray-300 p-[5px]">
+            <div className='bg-gray-300 p-[5px]'>
               <p>path = (array of object) text:string, url: string</p>
             </div>
           </div>
         </div>
 
         <br />
-        <div className="p-4 border first-line:-b border-black" id="pagination">
+        <div className='p-4 border first-line:-b border-black' id='pagination'>
           <Pagination
             maxPages={5}
             totalPages={10}
             currentPage={currentPage}
             onChangePage={handleChangePageEvent}
           />
-          <div className="mt-[5px]">
+          <div className='mt-[5px]'>
             <h1>Props: Pagination</h1>
-            <div className="bg-gray-300 p-[5px]">
+            <div className='bg-gray-300 p-[5px]'>
               maxPages = number || ex. maxPages = &#123;{5}&#125;
               <br />
               totalPages = number || ex. totalPages = &#123;{10}&#125;
@@ -124,6 +129,17 @@ const DemoComponent: React.FunctionComponent = () => {
               <br />
               onChangePage = function || ex. onChangePage = function that tracks
               the event of the page
+            </div>
+          </div>
+          <div className='p-4 border-b border-black space-y-4'>
+            <Searchbar onSearchEvent='string' />
+            <div className='mt-1.5'>
+              <h1 className='font-semibold'>Props: </h1>
+              <div className='bg-gray-300 p-1.5'>
+                <p>onSearchEvent = (string)[""] ex. onSearchEvent="string" </p>
+                <p>height = (string)[auto] ex. height="50px"</p>
+                <p>width = (string)[auto] ex. width="100px"</p>
+              </div>
             </div>
           </div>
         </div>
