@@ -6,10 +6,6 @@ import Card from '@/src/shared/components/Card';
 import Pagination from '@/src/shared/components/Pagination';
 import Searchbar from '@/src/shared/components/SearchBar/SearchBar';
 
-interface componentsProps {
-  onSearch: string;
-}
-
 const DemoComponent: React.FunctionComponent = () => {
   // sets up the state of the page to track user interaction
   const [currentPage, setCurrentPage] = useState(2);
@@ -87,16 +83,16 @@ const DemoComponent: React.FunctionComponent = () => {
             paths={[
               {
                 text: 'Profile',
-                url: '/profile',
+                url: '/profile'
               },
               {
                 text: 'User Information',
-                url: '/profile/information',
+                url: '/profile/information'
               },
               {
                 text: 'Component Index',
-                url: '/demo/components',
-              },
+                url: '/demo/components'
+              }
             ]}
           />
 
