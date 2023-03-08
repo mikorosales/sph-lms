@@ -161,7 +161,7 @@ const DemoComponent: React.FunctionComponent = () => {
           </div>
         </div>
         <br />
-        <div className="p-4 border-b border-black space-y-4">
+        <div className="p-4 border -b border-black space-y-4" id="searchbar">
           <Searchbar onSearchEvent="string" />
           <div className="mt-1.5">
             <h1 className="font-semibold">Props: Searchbar</h1>
