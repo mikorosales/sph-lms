@@ -234,25 +234,25 @@ const DemoComponent: React.FunctionComponent = () => {
         </div>
         <br />
         <div className="p-4 border -b border-black" id="dropdown">
-        <div className="space-y-3">
-          <h1>Component: Collapse</h1>
-          <Collapse
-            label="1. Install VS Code"
-            subLabel="Grading Format:  Scale (1-5)"
-          >
-            <div>This is Props</div>
-          </Collapse>
-          <Collapse label="2. Install Xampp">
-            <div>This is Props</div>
-          </Collapse>
+          <div className="space-y-3">
+            <h1>Component: Collapse</h1>
+            <Collapse
+              label="Install Vs Code"
+              subLabel="Grading Format:  Scale (1-5)"
+            >
+              <div>This is Props</div>
+            </Collapse>
+            <Collapse label="2. Install Xampp">
+              <div>This is Props</div>
+            </Collapse>
+          </div>
+          <div className="mt-[5px]">
+            <h1>Props: </h1>
+            <p>label=(string)[""] ex. label="1. Install Django Framework</p>
+            <p>subLabel=(string)[""] ex. label="Grading Format: Scale (1-5)</p>
+            <p>children=React.ReactNode;</p>
+          </div>
         </div>
-        <div className="mt-[5px]">
-          <h1>Props: </h1>
-          <p>label=(string)[""] ex. label="1. Install Django Framework</p>
-          <p>subLabel=(string)[""] ex. label="Grading Format: Scale (1-5)</p>
-          <p>children=React.ReactNode;</p>
-        </div>
-      </div>
       </div>
     </Fragment>
   );
