@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-interface SearchBarProps {
+export interface SearchBarProps {
   onSearchEvent: (query: string) => void;
   height?: string;
   width?: string;

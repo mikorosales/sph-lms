@@ -115,16 +115,16 @@ const DemoComponent: React.FunctionComponent = () => {
             paths={[
               {
                 text: 'Profile',
-                url: '/profile'
+                url: '/profile',
               },
               {
                 text: 'User Information',
-                url: '/profile/information'
+                url: '/profile/information',
               },
               {
                 text: 'Component Index',
-                url: '/demo/components'
-              }
+                url: '/demo/components',
+              },
             ]}
           />
 
@@ -159,26 +159,26 @@ const DemoComponent: React.FunctionComponent = () => {
               the event of the page
             </div>
           </div>
-          <div className="p-4 border-b border-black space-y-4">
-            <Searchbar onSearchEvent="string" />
-            <div className="mt-1.5">
-              <h1 className="font-semibold">Props: </h1>
-              <div className="bg-gray-300 p-1.5">
-                <p>onSearchEvent = (string)[""] ex. onSearchEvent="string" </p>
-                <p>height = (string)[auto] ex. height="50px"</p>
-                <p>width = (string)[auto] ex. width="100px"</p>
-              </div>
+        </div>
+        <br />
+        <div className="p-4 border-b border-black space-y-4">
+          <Searchbar onSearchEvent="string" />
+          <div className="mt-1.5">
+            <h1 className="font-semibold">Props: Searchbar</h1>
+            <div className="bg-gray-300 p-1.5">
+              <p>onSearchEvent = (string)[""] ex. onSearchEvent="string" </p>
+              <p>height = (string)[auto] ex. height="50px"</p>
+              <p>width = (string)[auto] ex. width="100px"</p>
             </div>
           </div>
         </div>
-
         <br />
         <div className="p-4 border first-letter:-b border-black" id="dropdown">
           <Dropdown
             label="Select an option"
             options={[
               { text: 'Option 1', url: '/login' },
-              { text: 'Option 2', url: '/register' }
+              { text: 'Option 2', url: '/register' },
             ]}
           />
           <div className="mt-[5px]">
