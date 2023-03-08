@@ -31,12 +31,12 @@ const Tabs: React.FC<Props> = ({ children }: Props) => {
   return (
     <div className="h-screen w-screen">
       <div className="flex flex-col">
-        <div className="flex flex-row space-x-10 pb-6 pt-10 pl-5 h-10 w-screen font font-small text-base border-b-2 text-blue-600">
+        <div className="flex flex-row space-x-10 pb-6 pt-10 pl-5 h-10 w-screen font font-small text-base border-b-2 text-gray-600">
           {tabList.map((items, index) => (
             <div
             key={items.id}
               className={`${
-                activeTab !== items.id ? '' : 'md:underline '
+                activeTab !== items.id ? '' : 'md:underline font-bold'
               } ' cursor-pointer hover:underline underline-offset-1'`}
               onClick={() => {
                 activateTab(items.id);
