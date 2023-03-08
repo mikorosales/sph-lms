@@ -115,16 +115,16 @@ const DemoComponent: React.FunctionComponent = () => {
             paths={[
               {
                 text: 'Profile',
-                url: '/profile',
+                url: '/profile'
               },
               {
                 text: 'User Information',
-                url: '/profile/information',
+                url: '/profile/information'
               },
               {
                 text: 'Component Index',
-                url: '/demo/components',
-              },
+                url: '/demo/components'
+              }
             ]}
           />
 
@@ -178,7 +178,7 @@ const DemoComponent: React.FunctionComponent = () => {
             label="Select an option"
             options={[
               { text: 'Option 1', url: '/login' },
-              { text: 'Option 2', url: '/register' },
+              { text: 'Option 2', url: '/register' }
             ]}
           />
           <div className="mt-[5px]">
