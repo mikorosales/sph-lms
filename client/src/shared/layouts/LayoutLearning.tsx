@@ -1,7 +1,7 @@
 import React from 'react';
-import NextIcon from '../icons/NextIcon';
-import PreviousIcon from '../icons/PreviousIcon';
-import Sidebar from './Sidebar';
+import NextIcon from '@/src/shared/icons/NextIcon';
+import PreviousIcon from '@/src/shared/icons/PreviousIcon';
+import Sidebar from '@/src/shared/layouts/Sidebar';
 
 interface Props {
   children: React.ReactNode
