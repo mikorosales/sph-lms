@@ -272,24 +272,20 @@ const DemoComponent: React.FunctionComponent = () => {
 
           <div className="mt-[5px]">
             <h1>Props: Checkbox</h1>
-
             <div className="bg-gray-300 p-[5px]">
               <p> label = (string) ex. label="Description"</p>
               <p>
-                {' '}
                 options = (string array)ex.
                 options="['Pif','Yell','Miko','Kent']"
               </p>
               <p>
-                {' '}
                 alignment = (string) ex.
-                alignment='vertical'||alignment='horizontal'{' '}
+                alignment='vertical'||alignment='horizontal'
               </p>
               <p> classname = (number)ex. text-xl h-4 w-4</p>
               <p>
-                {' '}
-                onClickEvent = (Function)ex. onClickEvent=(value)=`{'>'}`
-                handleOnClick"
+                onClickEvent = (Function)ex. onClickEvent=(value)=&gt;
+                handleOnClick()
               </p>
             </div>
           </div>
