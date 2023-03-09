@@ -165,15 +165,15 @@ const DemoComponent: React.FunctionComponent = () => {
               { text: 'Option 1', url: '/login' },
               { text: 'Option 2', url: '/register' }
             ]}
+            className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
           />
           <div className="mt-[5px]">
             <h1>Props: Dropdown</h1>
             <div className="bg-gray-300 p-[5px]">
               options: string[] || ex. options=
               {['option 1, option 2, option 3']} <br />
-              label: string || ex. label=&apos;Dropdown menu&apos;
-              <br />
-              Note: Option name is the same for anchor reference
+              label: string || ex. label=&apos;Dropdown menu&apos;<br />
+              className: string || ex. className="inline-flex"
             </div>
           </div>
         </div>

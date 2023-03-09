@@ -10,11 +10,13 @@ export interface Option {
 export interface DropdownProps {
   label?: string;
   options: Option[];
+  className?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
   options,
-  label
+  label,
+  className
 }: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(
     undefined
@@ -31,7 +33,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       <div>
         <button
           type="button"
-          className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className={className}
           id="options-menu"
           aria-haspopup="true"
           aria-expanded="true"
@@ -39,7 +41,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             setIsOpen(!isOpen);
           }}
         >
-          <span>{selectedOption ?? label}</span>
+          <span>{label}</span>
           <div className="-mr-1 ml-2 h-5 w-5" aria-hidden="true">
             <ChevronDownIcon height={20} width={20} />
           </div>
@@ -57,7 +59,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             {options.map((option) => (
               <a
                 key={option.url}
-                href={`#${option.url}`}
+                href={`${option.url}`}
                 className={`${
                   selectedOption === option.url
                     ? 'bg-gray-100 text-gray-900'
