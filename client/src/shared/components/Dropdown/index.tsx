@@ -100,7 +100,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 };
 
 Dropdown.defaultProps = {
-  label: ''
+  label: 'Dropdown Menu'
 };
 
 export default Dropdown;
