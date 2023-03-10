@@ -430,11 +430,12 @@ const DemoComponent: React.FunctionComponent = () => {
             <h1>Props: </h1>
 
             <div className="bg-gray-300 p-[5px]">
-              <p>header = (array of string) ex. header=&#9</p>
+              <p>header = (array of string)</p>
               <p>
                 data = (array of object) ex &#123; id: 1, name: "Name1", age: 21
                 &#125;
               </p>
+              <p>action = (boolean) ex. true | false</p>
             </div>
           </div>
         </div>
