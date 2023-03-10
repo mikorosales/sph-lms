@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React from 'react';
+import Button from '../Button';
 
 interface TableProps<T> {
   header: string[];
   data: T[];
+  action?: boolean;
 }
 
 const Table: React.FC<TableProps<any>> = ({
   header,
-  data
+  data,
+  action
 }: TableProps<any>) => {
   console.log(data);
 
@@ -21,6 +25,11 @@ const Table: React.FC<TableProps<any>> = ({
                 {item}
               </th>
             ))}
+            {action && (
+              <th scope="col" className="px-6 py-3" key={header.length + 1}>
+                Actions
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -34,6 +43,22 @@ const Table: React.FC<TableProps<any>> = ({
               </td>
               <td className="px-6 py-4">{col.name}</td>
               <td className="px-6 py-4">{col.age}</td>
+              {action && (
+                <td className="flex">
+                  <Button
+                    text="Edit"
+                    onClick={() => {
+                      alert('Edit Clicked');
+                    }}
+                  />
+                  <Button
+                    text="Delete"
+                    onClick={() => {
+                      alert('Delete Clicked');
+                    }}
+                  />
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
@@ -42,6 +67,8 @@ const Table: React.FC<TableProps<any>> = ({
   );
 };
 
-Table.defaultProps = {};
+Table.defaultProps = {
+  action: false
+};
 
 export default Table;

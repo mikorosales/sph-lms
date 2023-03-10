@@ -414,7 +414,15 @@ const DemoComponent: React.FunctionComponent = () => {
         <div className="p-4 border" id="tableComponent">
           <h1>Component: Table</h1>
           <br />
+          <p>No Action Enabled</p>
           <Table header={['id', 'name', 'age']} data={tableList} />
+
+          <p>Action Enabled</p>
+          <Table
+            header={['id', 'name', 'age']}
+            data={tableList}
+            action={true}
+          />
 
           <br />
 
