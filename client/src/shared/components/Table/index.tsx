@@ -2,6 +2,12 @@
 import React from 'react';
 import Button from '../Button';
 
+export interface tableData {
+  id: number;
+  name: string;
+  age: number;
+}
+
 interface TableProps<T> {
   header: string[];
   data: T[];
@@ -13,8 +19,6 @@ const Table: React.FC<TableProps<any>> = ({
   data,
   action
 }: TableProps<any>) => {
-  console.log(data);
-
   return (
     <div className="relative overflow-x-auto">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
