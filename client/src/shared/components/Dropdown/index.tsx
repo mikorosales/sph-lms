@@ -7,7 +7,7 @@ export interface Option {
 }
 
 export interface DropdownProps {
-  label?: string;
+  label: string;
   options: Option[];
   classNames?: string;
 }
