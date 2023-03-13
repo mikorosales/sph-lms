@@ -8,7 +8,7 @@ export interface CardProps {
 
 const Card: React.FC<CardProps> = ({ height, title, children }: CardProps) => {
   return (
-    <div className="w-full md:w-1/2 lg:w-1/3">
+  // <div className="w-full md:w-1/2 lg:w-1/3">
       <div
         className={`bg-white rounded-lg overflow-hidden shadow-lg ${height} w-auto`}
       >
@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ height, title, children }: CardProps) => {
           {children}
         </div>
       </div>
-    </div>
+
   );
 };
 
