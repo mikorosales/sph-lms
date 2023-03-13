@@ -8,9 +8,9 @@ export interface tableData {
   age: number;
 }
 
-export interface TableProps<T> {
+export interface TableProps<tableData> {
   header: string[];
-  data: T[];
+  data: tableData[];
   action?: boolean;
 }
 
