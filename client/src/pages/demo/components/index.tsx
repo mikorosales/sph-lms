@@ -13,7 +13,7 @@ import Collapse from '@/src/shared/components/Collapse/Collapse';
 import Checkbox from '@/src/shared/components/Checkbox';
 import Select from '@/src/shared/components/Select';
 import Button from '@/src/shared/components/Button';
-import RadioButton from '@/src/shared/components/Radiobutton';
+import RadioButton from '@/src/shared/components/RadioButton-Copy';
 import Table, { tableData } from '@/src/shared/components/Table';
 
 const DemoComponent: React.FunctionComponent = () => {

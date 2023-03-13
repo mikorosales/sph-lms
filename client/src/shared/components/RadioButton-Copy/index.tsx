@@ -9,19 +9,8 @@ export interface Props {
   onClickEvent: (query: string) => void;
 }
 
-<<<<<<< Updated upstream
-const Radiobutton: React.FC<Props> = ({
-  label,
-  options,
-  alignment,
-  classname,
-  onClickEvent
-}: Props) => {
-  const [chosenOption, setChosenOption] = React.useState('');
-=======
 const RadioButton: FC<Props> = ({ label, options, alignment, classname, onClickEvent }: Props) => {
   const [selectedOption, setSelectedOption] = useState('');
->>>>>>> Stashed changes
   const handleOnClick = (value: any): void => {
     setSelectedOption(value);
     console.log(selectedOption);
@@ -44,14 +33,8 @@ const RadioButton: FC<Props> = ({ label, options, alignment, classname, onClickE
               className={classname}
               type="radio"
               value={option}
-<<<<<<< Updated upstream
-              checked={chosenOption.includes(option)}
-              onClick={() => {
-                // sample of onclickevent
-=======
               checked={selectedOption.includes(option)}
               onClick={() => { // sample of onclickevent
->>>>>>> Stashed changes
                 handleOnClick(`${option}`);
               }}
             ></input>
