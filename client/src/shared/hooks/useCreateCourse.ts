@@ -41,7 +41,7 @@ export const useCreateCourse = (): any => {
 
     const result = await response.json();
 
-    router.push(`/courses/${result.id}`);
+    router.push(`/courses/detail/${result.id}`);
   };
 
   const paths = [
