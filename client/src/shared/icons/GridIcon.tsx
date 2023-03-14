@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import type { FC } from 'react';
 
-interface GridIconProps {
+export interface GridIconProps {
   height?: number,
   width?: number,
   children?: string
 }
+
 const GridIcon: FC<GridIconProps> = ({ height, width, children }: GridIconProps) => {
   return (
     <svg
@@ -13,7 +15,7 @@ const GridIcon: FC<GridIconProps> = ({ height, width, children }: GridIconProps)
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className={`w-${width} h-${height} ${children}`}
   >
     <path
       strokeLinecap="round"
@@ -23,4 +25,11 @@ const GridIcon: FC<GridIconProps> = ({ height, width, children }: GridIconProps)
   </svg>
   );
 };
+
+GridIcon.defaultProps = {
+  height: 6,
+  width: 6,
+  children: ''
+};
+
 export default GridIcon;

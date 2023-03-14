@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import type { FC } from 'react';
 
-interface ListIconProps {
+export interface ListIconProps {
   height?: number,
   width?: number,
   children?: string
 }
+
 const ListIcon: FC<ListIconProps> = ({ height, width, children }: ListIconProps) => {
   return (
     <svg
@@ -13,7 +15,7 @@ const ListIcon: FC<ListIconProps> = ({ height, width, children }: ListIconProps)
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="black"
-      className="w-6 h-6"
+      className={`w-${width} h-${height} ${children}`}
     >
       <path
         strokeLinecap="round"
@@ -23,4 +25,11 @@ const ListIcon: FC<ListIconProps> = ({ height, width, children }: ListIconProps)
     </svg>
   );
 };
+
+ListIcon.defaultProps = {
+  height: 6,
+  width: 6,
+  children: ''
+};
+
 export default ListIcon;
