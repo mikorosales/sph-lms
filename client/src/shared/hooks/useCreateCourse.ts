@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable @typescript-eslint/consistent-type-imports */
 import { useEffect, useState } from 'react';
-import { API_URL } from '@/src/shared/utils';
-import { SelectOptionData } from '@/src/shared/components/Select';
+import type { SelectOptionData } from '@/src/shared/components/Select';
 import { useRouter } from 'next/router';
+import axiosInstance from '@/src/apis';
+import { alertError, alertSuccess, isRequestOk } from '../utils';
 
 export const useCreateCourse = (): any => {
   const router = useRouter();
@@ -31,17 +31,13 @@ export const useCreateCourse = (): any => {
     e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
   ): Promise<void> => {
     e.preventDefault();
-    const response = await fetch(`${API_URL}/course/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(postData)
-    }).then();
-
-    const result = await response.json();
-
-    router.push(`/courses/detail/${result.id}`);
+    try {
+      const result = await axiosInstance.post('/course/', postData);
+      alertSuccess('Course Successfully Added');
+      router.push(`/courses/detail/${result.data.id}`);
+    } catch (error) {
+      alertError('Something Went Wrong');
+    }
   };
 
   const paths = [
@@ -58,17 +54,17 @@ export const useCreateCourse = (): any => {
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
-        const response = await fetch(`${API_URL}/course-category`);
-        if (response.ok) {
-          const data = await response.json();
-          setCategory(data);
+        const result = await axiosInstance.get('/course-category');
+        if (isRequestOk(result)) {
+          setCategory(result.data);
         }
       } catch (error) {
         console.error(error);
+        alert('something went wrong');
       }
     };
 
-    void fetchData();
+    fetchData();
   }, []);
 
   const categoriesOption: SelectOptionData[] = Object.entries(category).map(
