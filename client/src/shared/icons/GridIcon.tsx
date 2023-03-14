@@ -4,18 +4,20 @@ import type { FC } from 'react';
 export interface GridIconProps {
   height?: number,
   width?: number,
-  children?: string
+  classname?: string
 }
 
-const GridIcon: FC<GridIconProps> = ({ height, width, children }: GridIconProps) => {
+const GridIcon: FC<GridIconProps> = ({ height, width, classname }: GridIconProps) => {
   return (
     <svg
+    height={height}
+    width={width}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className={`w-${width} h-${height} ${children}`}
+    className={classname}
   >
     <path
       strokeLinecap="round"
@@ -27,9 +29,9 @@ const GridIcon: FC<GridIconProps> = ({ height, width, children }: GridIconProps)
 };
 
 GridIcon.defaultProps = {
-  height: 6,
-  width: 6,
-  children: ''
+  height: 25,
+  width: 25,
+  classname: ''
 };
 
 export default GridIcon;

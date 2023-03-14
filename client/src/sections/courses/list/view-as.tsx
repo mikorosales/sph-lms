@@ -8,7 +8,7 @@ export interface TypeOfViewProps {
 
 const ViewAs: FC<TypeOfViewProps> = ({ typeOfView, data }: TypeOfViewProps) => {
   return (
-    <div className="">
+    <>
       {typeOfView === 'grid'
         ? (
         <div className="grid grid-cols-3 ">
@@ -26,8 +26,7 @@ const ViewAs: FC<TypeOfViewProps> = ({ typeOfView, data }: TypeOfViewProps) => {
                     ></Image>
                   </div>
                   <div className=" flex justify-center text-xl pt-2">
-                    {' '}
-                    Title{' '}
+                    Title
                   </div>
                   <div className="space-y-2">
                     <div className="w-16 bg-gray-300 rounded-lg mx-2">General</div>
@@ -59,11 +58,9 @@ const ViewAs: FC<TypeOfViewProps> = ({ typeOfView, data }: TypeOfViewProps) => {
                   <div className="text-xl pt-3">Title</div>
                   <div className="flex flex-col space-y-2 ">
                     <div className="bg-gray-300 rounded-lg flex justify-center">
-                      {' '}
-                      General{' '}
+                      General
                     </div>
                     <div className="bg-gray-300 rounded-lg flex justify-center">
-                      {' '}
                       03-01-2023
                     </div>
                   </div>
@@ -73,7 +70,7 @@ const ViewAs: FC<TypeOfViewProps> = ({ typeOfView, data }: TypeOfViewProps) => {
           ))}
         </div>
           )}
-    </div>
+    </>
   );
 };
 
