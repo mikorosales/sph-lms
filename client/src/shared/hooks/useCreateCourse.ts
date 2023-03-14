@@ -34,7 +34,7 @@ export const useCreateCourse = (): any => {
     try {
       const result = await axiosInstance.post('/course/', postData);
       alertSuccess('Course Successfully Added');
-      router.push(`/courses/detail/${result.data.id}`);
+      router.push(`/trainer/course/detail/${result.data.id}`);
     } catch (error) {
       alertError('Something Went Wrong');
     }
