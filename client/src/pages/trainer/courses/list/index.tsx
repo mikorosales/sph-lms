@@ -9,6 +9,8 @@ import RightSideContainer from '@/src/sections/courses/list/right-side-container
 
 const View = (): ReactNode => {
   const [selectedView, setSelectedView] = useState('grid');
+  const [gridIconColor, setGridIconColor] = useState('stroke-blue-500');
+  const [listIconColor, setListIconColor] = useState('');
   const sample = [
     'a',
     'b',
@@ -27,6 +29,13 @@ const View = (): ReactNode => {
   ];
   const handleView = (view: string): void => {
     setSelectedView(view);
+    if (view === 'grid') {
+      setGridIconColor('stroke-blue-500');
+      setListIconColor('');
+    } else {
+      setListIconColor('stroke-blue-500');
+      setGridIconColor('');
+    }
   };
 
   return (
@@ -56,17 +65,17 @@ const View = (): ReactNode => {
                   onClick={() => {
                     handleView('list');
                   }}
-                  className="flex justify-end cursor-pointer hover:bg-blue-500"
+                  className="flex justify-end cursor-pointer"
                 >
-                  <ListIcon height={25} width={25}></ListIcon>
+                  <ListIcon height={25} width={25} classname={listIconColor}></ListIcon>
                 </div>
                 <div
-                  className="flex justify-end cursor-pointer hover:bg-blue-500"
+                  className="flex justify-end cursor-pointer"
                   onClick={() => {
                     handleView('grid');
                   }}
                 >
-                  <GridIcon height={25} width={25}></GridIcon>
+                  <GridIcon height={25} width={25} classname={gridIconColor}></GridIcon>
                 </div>
               </div>
             </div>

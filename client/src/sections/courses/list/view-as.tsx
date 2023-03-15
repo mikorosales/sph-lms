@@ -13,55 +13,63 @@ const ViewAs: FC<TypeOfViewProps> = ({ typeOfView, data }: TypeOfViewProps) => {
         ? (
         <div className="grid grid-cols-3 ">
           {data.map((data, index) => (
-            <div key={index} className="m-3 o">
-              <div className="">
-                <div className="h-56  bg-white flex flex-col drop-shadow-lg">
-                  <div className=" flex justify-center items-center">
+            <div key={index} className="m-3 drop-shadow-lg h-80 border-2 flex justify-between">
+                <div className=" bg-white flex flex-col ">
+                  <div className="h-44 flex justify-center border-2 border-lightGray">
                     <Image
                       src="/image1.jpg"
                       alt=""
-                      height={150}
-                      width={180}
+                      height={200}
+                      width={200}
                       className="justify-center"
                     ></Image>
                   </div>
-                  <div className=" flex justify-center text-xl pt-2">
-                    Title
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-16 bg-gray-300 rounded-lg mx-2">General</div>
-                    <div className="w-28 bg-gray-300 rounded-lg mx-2">
-                      03-01-2023
+                  <div className='flex flex-col justify-between h-36'>
+                    <div className="hover:underline pt-2 mx-8 text-2xl h-auto w-56 font-semibold break-normal">
+                      Title
+                    </div>
+                    <div className="space-y-2 pb-4">
+                      <div className="inline-block bg-blueGray rounded-lg mx-8 text-lightBlue pl-2 pr-2">General</div>
+                      <div className="inline-block bg-blueGray rounded-lg mx-8 text-lightBlue pl-2 pr-2">
+                        03-01-2023
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
           ))}
         </div>
           )
         : (
-        <div className="flex flex-col ">
-          {data.map((sadatample, index) => (
+        <div>
+          {data.map((data, index) => (
             <div key={index} className="m-3">
-              <div className=" flex flex-row h-32 w-auto bg-white drop-shadow-lg space-x-20">
-                <div className="flex items-center pl-20">
-                  <Image
-                    src="/image1.jpg"
-                    alt=""
-                    width={150}
-                    height={150}
-                    className="justify-center"
-                  ></Image>
+              <div className=" flex flex-row h-36 w-auto bg-white drop-shadow-lg space-x-20 ">
+                <div className='p-4'>
+                  <div className="flex justify-center h-28 w-64 border-2 border-lightGray ">
+                    <Image
+                      src="/image1.jpg"
+                      alt=""
+                      width={150}
+                      height={150}
+                      className="justify-center"
+                    ></Image>
+                  </div>
                 </div>
-                <div className="flex flex-col space-y-5">
-                  <div className="text-xl pt-3">Title</div>
-                  <div className="flex flex-col space-y-2 ">
-                    <div className="bg-gray-300 rounded-lg flex justify-center">
-                      General
+                <div className="flex flex-col justify-between">
+                  <div className="text-2xl hover:underline pt-4 font-semibold break-normal inline-block">
+                    Title
+                  </div>
+                  <div className="flex flex-col space-y-2 pb-4">
+                    <div className='flex-wrap'>
+                      <div className="inline-block bg-blueGray text-lightBlue rounded-lg  pl-2 pr-2">
+                        General
+                      </div>
                     </div>
-                    <div className="bg-gray-300 rounded-lg flex justify-center">
-                      03-01-2023
+                    <div className='flex flex-wrap'>
+                      <div className=" bg-blueGray text-lightBlue rounded-lg  pl-2 pr-2">
+                        03-01-2023
+                      </div>
                     </div>
                   </div>
                 </div>
