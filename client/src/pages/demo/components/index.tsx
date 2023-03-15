@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/consistent-type-imports */
 /* eslint-disable react/no-unescaped-entities */
 import React, { Fragment, useState } from 'react';
 import Iframe from '@/src/shared/components/Iframe';
@@ -14,7 +13,7 @@ import Checkbox from '@/src/shared/components/Checkbox';
 import Select from '@/src/shared/components/Select';
 import Button from '@/src/shared/components/Button';
 import RadioButton from '@/src/shared/components/RadioButton';
-import Table, { tableData } from '@/src/shared/components/Table';
+import Table, { type tableData } from '@/src/shared/components/Table';
 
 const DemoComponent: React.FunctionComponent = () => {
   // sets up the state of the page to track user interaction
