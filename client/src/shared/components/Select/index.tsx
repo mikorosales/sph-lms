@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import React from 'react';
 
 export interface SelectOptionData {
@@ -10,6 +11,8 @@ export interface SelectProps<SelectOptionData> {
   options: SelectOptionData[];
   name?: string;
   value?: string;
+  width?: string;
+  height?: string;
   eventHandler?: (...args: any[]) => any;
 }
 
@@ -18,15 +21,23 @@ const Select: React.FC<SelectProps<SelectOptionData>> = ({
   options,
   name,
   value,
+  width,
+  height,
   eventHandler
 }) => {
+  const propStyle = {
+    width: width,
+    height: height
+  };
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="">
       <select
+      style={propStyle}
         name={name}
         value={value}
         onChange={eventHandler}
-        className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+        className="rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
       >
         {label !== '' && (
           <option defaultValue="" disabled>
@@ -45,7 +56,9 @@ const Select: React.FC<SelectProps<SelectOptionData>> = ({
 
 Select.defaultProps = {
   label: '',
-  value: ''
+  value: '',
+  width: '100%',
+  height: ''
 };
 
 export default Select;

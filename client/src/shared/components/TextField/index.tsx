@@ -1,11 +1,12 @@
+/* eslint-disable object-shorthand */
 import React from 'react';
 
 export interface TextFieldProps {
   label?: string;
   placeholder?: string;
-  width: number;
-  height: number;
-  className: string;
+  width?: string;
+  height?: string;
+  className?: string;
   resizable: boolean;
   name?: string;
   value?: string;
@@ -23,17 +24,21 @@ const Textfield: React.FC<TextFieldProps> = ({
   value,
   eventHandler
 }: TextFieldProps) => {
+  const propStyle = {
+    width: width,
+    height: height
+  };
   return (
     <div className="mb-4 h-auto w-auto">
       {label !== null && (
         <div>
-          <label>{label}</label>
+          <label className="block text-gray-700 text-sm font-bold mb-2"
+          >{label}</label>
         </div>
       )}
       <textarea
-        rows={height}
-        cols={width}
-        className={`${resizable ? 'resize' : 'resize:none'} ${className}`}
+        style={propStyle}
+        className={`shadow appearance-none border border-gray-300 rounded text-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${resizable ? 'resize' : 'resize:none'}`}
         placeholder={placeholder}
         value={value}
         name={name}
@@ -46,7 +51,10 @@ const Textfield: React.FC<TextFieldProps> = ({
 Textfield.defaultProps = {
   label: '',
   placeholder: '',
-  value: ''
+  value: '',
+  width: '100%',
+  height: '150px',
+  className: ''
 };
 
 export default Textfield;

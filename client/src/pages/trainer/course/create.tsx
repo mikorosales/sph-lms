@@ -27,15 +27,14 @@ const CoursesCreate: React.FC = () => {
         <Breadcrumbs paths={paths} />
         <div className="flex flex-col mt-10">
           <form onSubmit={handleSubmit}>
-            <div className="text-2xl font-bold">Create Course</div>
+            <div className="text-2xl text-sky-700">Create New Course</div>
             <div className="mt-12">
               <div className="block">
                 <InputField
                   placeholder={'E.g. TypeScript 101'}
                   type="text"
-                  width="20%"
-                  height="50px"
-                  label="Course Name"
+                  width="40%"
+                  label="Course Name *"
                   id="course-name"
                   name="title"
                   value={postData.title}
@@ -44,10 +43,8 @@ const CoursesCreate: React.FC = () => {
               </div>
               <div className="block">
                 <Textfield
-                  className="text-xl border border-black rounded-md rows"
                   resizable={false}
-                  width={30}
-                  height={2}
+                  width="40%"
                   label="Course Description"
                   name="description"
                   value={postData.description}
@@ -57,6 +54,7 @@ const CoursesCreate: React.FC = () => {
 
               <div className="block">
                 <Select
+                  width="40%"
                   label="Select Course Category"
                   options={categoriesOption}
                   name="course_category"

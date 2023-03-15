@@ -47,7 +47,7 @@ export const useCreateCourse = (): any => {
     },
     {
       text: 'Create',
-      url: '/courses/create'
+      url: router.asPath
     }
   ];
 
