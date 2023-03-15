@@ -11,22 +11,8 @@ const View = (): ReactNode => {
   const [selectedView, setSelectedView] = useState('grid');
   const [gridIconColor, setGridIconColor] = useState('stroke-blue-500');
   const [listIconColor, setListIconColor] = useState('');
-  const sample = [
-    'a',
-    'b',
-    'c',
-    'e',
-    'f',
-    'g',
-    'h',
-    'a',
-    'b',
-    'c',
-    'e',
-    'f',
-    'g',
-    'h'
-  ];
+  const listOfCourses = Array(5).fill('Course Title');
+
   const handleView = (view: string): void => {
     setSelectedView(view);
     if (view === 'grid') {
@@ -67,7 +53,11 @@ const View = (): ReactNode => {
                   }}
                   className="flex justify-end cursor-pointer"
                 >
-                  <ListIcon height={25} width={25} classname={listIconColor}></ListIcon>
+                  <ListIcon
+                    height={25}
+                    width={25}
+                    classname={listIconColor}
+                  ></ListIcon>
                 </div>
                 <div
                   className="flex justify-end cursor-pointer"
@@ -75,12 +65,19 @@ const View = (): ReactNode => {
                     handleView('grid');
                   }}
                 >
-                  <GridIcon height={25} width={25} classname={gridIconColor}></GridIcon>
+                  <GridIcon
+                    height={25}
+                    width={25}
+                    classname={gridIconColor}
+                  ></GridIcon>
                 </div>
               </div>
             </div>
             <div className="z-10 pt-4 h-96">
-              <ViewAs typeOfView={selectedView} data={sample}></ViewAs>
+              <ViewAs
+                typeOfView={selectedView}
+                listOfCourses={listOfCourses}
+              ></ViewAs>
             </div>
           </div>
         </div>
