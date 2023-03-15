@@ -55,7 +55,7 @@ const CoursesCreate: React.FC = () => {
               <div className="block">
                 <Select
                   width="40%"
-                  label="Select Course Category"
+                  label="Course Category"
                   options={categoriesOption}
                   name="course_category"
                   value={postData.course_category}
