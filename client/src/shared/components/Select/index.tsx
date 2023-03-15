@@ -31,7 +31,14 @@ const Select: React.FC<SelectProps<SelectOptionData>> = ({
   };
 
   return (
-    <div className="">
+    <div className="mb-4">
+      {label !== '' && (
+        <label
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          {label}
+        </label>
+      )}
       <select
       style={propStyle}
         name={name}
@@ -39,11 +46,9 @@ const Select: React.FC<SelectProps<SelectOptionData>> = ({
         onChange={eventHandler}
         className="rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
       >
-        {label !== '' && (
-          <option defaultValue="" disabled>
+        <option value="" disabled>
             {label}
-          </option>
-        )}
+        </option>
         {options.map((option) => (
           <option key={option.id} value={option.id} className="py-2 px-4 my-1">
             {option.text}
