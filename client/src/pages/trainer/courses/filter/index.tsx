@@ -16,6 +16,7 @@ export interface Category {
 
 export interface Course {
   id: number;
+
   title: string;
   description: string;
   course_category: number;
