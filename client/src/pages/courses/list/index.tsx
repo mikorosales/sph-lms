@@ -29,7 +29,7 @@ const CoursePage: React.FunctionComponent = () => {
   useEffect(() => {
     async function fetchdata (): Promise<void> {
       try {
-        const response = await api.get<CourseProps[]>('course');
+        const response = await api.get<CourseProps[]>('course/?ordering=title');
         setCourse(response.data);
       } catch (error) {
         console.error(error);
@@ -38,36 +38,10 @@ const CoursePage: React.FunctionComponent = () => {
     void fetchdata();
   }, []);
 
-  course.sort((a, b) => {
-    const titleA = a.title.toLowerCase();
-    const titleB = b.title.toLowerCase();
-    const pattern = /(\d+)|(\D+)/g;
-    const partsA = titleA.match(pattern) ?? [];
-    const partsB = titleB.match(pattern) ?? [];
-    const length = Math.max(partsA.length, partsB.length);
-    for (let i = 0; i < length; i++) {
-      const partA = partsA[i] ?? '';
-      const partB = partsB[i] ?? '';
-      const isNumberA = /^\d+$/.test(partA);
-      const isNumberB = /^\d+$/.test(partB);
-      if (isNumberA && isNumberB) {
-        const numA = parseInt(partA, 10);
-        const numB = parseInt(partB, 10);
-        if (numA < numB) return sortDirection === ASC ? -1 : 1;
-        if (numA > numB) return sortDirection === ASC ? 1 : -1;
-      } else {
-        if (partA < partB) return sortDirection === ASC ? -1 : 1;
-        if (partA > partB) return sortDirection === ASC ? 1 : -1;
-      }
-    }
-    return 0;
-  });
-
   const handleSortDirectionChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ): void => {
     setSortDirection(event.target.value as typeof ASC | typeof DESC);
-    console.log(sortDirection);
   };
 
   const renderCourse = course.map((item) => (
